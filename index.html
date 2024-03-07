@@ -6,21 +6,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./output/tailwind.css">
+    <script>
+        if (localStorage.getItem("theme")=== 'dark') {
+            document.documentElement.classList.add('dark')
+        }
+        if (localStorage.getItem("theme")=== 'light' || localStorage.getItem("theme")===null) {
+            document.documentElement.classList.remove('dark')
+        }
+    </script>
 </head>
 
-<body class="h-screen flex items-center justify-center bg-gray-100 shadow-md">
-    <div class=" sm:flex p-8 bg-white rounded-xl space-y-2 sm:space-x-3">
-        <img class="h-14 mx-auto rounded-full ring-2" src="https://ucarecdn.com/10020246-e096-4225-a7c4-b8db1a8c7e9c/"
-            alt="LWS logo">
-        <div class="text-center space-y-4">
-            <div>
-                <p class="text-lg text-black font-semibold">Learn with Sumit</p>
-                <p>Youtube Channel</p>
+<body class="h-screen">
+    <div class="flex justify-end ">
+        <button id="theme" class="bg-black text-white px-4 py-3">Dark Mode</button>
+    </div>
+    <div class="h-screen flex items-center justify-center bg-gray-100 dark:bg-gray-800 shadow-md">
+        <div class=" sm:flex p-8 bg-white dark:bg-black rounded-xl space-y-2 sm:space-x-3">
+            <img class="h-14 mx-auto rounded-full ring-2 dark:ring-white transform hover:scale-110 duration-300"
+                src="https://ucarecdn.com/10020246-e096-4225-a7c4-b8db1a8c7e9c/" alt="LWS logo">
+            <div class="text-center space-y-4">
+                <div>
+                    <p class="text-lg text-black dark:text-white font-semibold">Learn with Sumit</p>
+                    <p class="dark:text-gray-300">Youtube Channel</p>
+                </div>
+                <button
+                    class="px-4 py-1 border border-purple-200 rounded-full text-sm text-purple-600 dark:text-white hover:text-white transform hover:scale-125 duration-500 hover:bg-purple-700">Visit
+                    Now</button>
             </div>
-            <button class="px-4 py-1 border border-purple-200 rounded-full text-sm text-purple-600 hover:text-white hover:bg-purple-700">Visit Now</button>
         </div>
     </div>
-
+    <script>
+        const themeMode= document.getElementById("theme");
+    
+        theme.addEventListener('click', () =>{
+            if (localStorage.getItem("theme")=== 'light' || localStorage.getItem("theme")===null) {
+                localStorage.theme = 'dark'
+                document.documentElement.classList.add('dark')
+            }else{
+                localStorage.theme= 'light'
+                document.documentElement.classList.remove('dark')
+            }
+        })
+        
+        
+        
+        
+    </script>
 </body>
 
 </html>

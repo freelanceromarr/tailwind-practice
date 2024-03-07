@@ -4,6 +4,7 @@ module.exports = {
     './index.html',
     './form.html',
   ],
+  darkMode: 'selector',
   theme: {
     extend: {},
   },
